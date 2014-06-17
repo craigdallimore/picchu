@@ -1,0 +1,42 @@
+{
+  "name": "ProjectTemplate",
+  "description": "Project Template",
+  "version": "0.0.2",
+  "private": true,
+  "devDependencies": {
+    "browserify": "~4.1.x",
+    "browserify-shim": "~3.5.x",
+    "chai": "~1.9.x",
+    "coffee-script": "~1.7.x",
+    "gulp": "~3.8.x",
+    "gulp-browserify": "~0.5.x",
+    "gulp-livereload": "^2.1.0",
+    "gulp-plumber": "^0.6.3",
+    "gulp-rename": "~1.2.x",
+    "gulp-ruby-sass": "^0.5.0",
+    "gulp-sass": "~0.7.1",
+    "gulp-uglify": "~0.3.x",
+    "gulp-util": "~2.2.x",
+    "gulp-zopfli": "^0.1.1",
+    "karma": "^0.12.16",
+    "karma-browserify": "^0.2.1",
+    "karma-coverage": "~0.1.x",
+    "karma-mocha": "~0.1.x",
+    "karma-sinon-chai": "~0.1.x"
+  },
+  "dependencies": {
+    "instagram-node": "^0.4.0",
+    "compression": "^1.0.6",
+    "errorhandler": "~1.x",
+    "express": "~4.x",
+    "jade": "*",
+    "morgan": "~1.x",
+    "node-twitter": "^0.5.0",
+    "react": "^0.10.0",
+    "socket.io": "^1.0.4",
+    "socket.io-client": "^1.0.4"
+  },
+  "scripts": {
+    "test": "karma start --single-run"
+  }
+}
