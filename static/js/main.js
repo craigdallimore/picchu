@@ -7,7 +7,7 @@ var io = require('socket.io-client')(location.href);
 
 io.on('connect', function(socket) {
 
-  console.log('connection made');
+  console.log('Connection made');
 
 })
 

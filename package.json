@@ -1,11 +1,11 @@
 {
-  "name": "ProjectTemplate",
-  "description": "Project Template",
-  "version": "0.0.2",
+  "name": "Picchu",
+  "description": "Photo wall app",
+  "version": "0.0.1",
   "private": true,
   "devDependencies": {
     "browserify": "~4.1.x",
-    "browserify-shim": "~3.5.x",
+    "browserify-shim": "~3.6.x",
     "chai": "~1.9.x",
     "coffee-script": "~1.7.x",
     "gulp": "~3.8.x",
@@ -14,27 +14,26 @@
     "gulp-plumber": "^0.6.3",
     "gulp-rename": "~1.2.x",
     "gulp-ruby-sass": "^0.5.0",
-    "gulp-sass": "~0.7.1",
     "gulp-uglify": "~0.3.x",
     "gulp-util": "~2.2.x",
-    "gulp-zopfli": "^0.1.1",
     "karma": "^0.12.16",
     "karma-browserify": "^0.2.1",
-    "karma-coverage": "~0.1.x",
+    "karma-coverage": "~0.2.x",
     "karma-mocha": "~0.1.x",
-    "karma-sinon-chai": "~0.1.x"
+    "karma-sinon-chai": "~0.2.x"
   },
   "dependencies": {
-    "instagram-node": "^0.4.0",
-    "compression": "^1.0.6",
+    "compression": "^1.0.8",
     "errorhandler": "~1.x",
+    "event-stream": "^3.1.5",
     "express": "~4.x",
+    "instagram-node": "^0.4.1",
     "jade": "*",
     "morgan": "~1.x",
-    "node-twitter": "^0.5.0",
     "react": "^0.10.0",
-    "socket.io": "^1.0.4",
-    "socket.io-client": "^1.0.4"
+    "socket.io": "^1.0.6",
+    "socket.io-client": "^1.0.6",
+    "twitter": "^0.2.9"
   },
   "scripts": {
     "test": "karma start --single-run"
