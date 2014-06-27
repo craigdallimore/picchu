@@ -3,22 +3,15 @@
 //
 // ----------------------------------------------------------------------------
 
-var io = require('socket.io-client')(location.href);
+var shoe    = require('shoe');
+var through = require('through');
 
-io.on('connect', function(socket) {
+var stream = shoe('/link');
 
-  console.log('Connection made');
+stream.pipe(through(function(msg) {
 
-})
+  console.log(msg);
 
-io.on('disconnect', function() {
+}));
 
-  console.log('Connection broken');
-
-});
-
-io.on('tiles', function(items) {
-
-  console.log(items);
-
-});
+stream.write('Hello from client');

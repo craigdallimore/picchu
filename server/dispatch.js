@@ -3,31 +3,58 @@
 //
 // ----------------------------------------------------------------------------
 
-var io        = require('socket.io')(),
-    es        = require('event-stream');
+//var tiles       = require('./store').tiles;
+var shoe          = require('shoe');
+var Transform     = require('stream').Transform;
+var util          = require('util');
+var twitterConfig = require('./config/twitter');
+var twitter       = require('twitter');
+var es            = require('emit-stream');
 
-// Make io aware of the server
-module.exports = function(server) { io.listen(server); }
+function Texter(options) {
 
-var tiles = require('./store').tiles;
+  if(!(this instanceof Texter)) {
+    return new Texter(options);
+  }
 
-// Emit tiles after a connection is made
-io.on('connection', function(socket) {
+  if (!options) { options = {}; }
 
-  console.info('A client connected');
-  //tiles._write = function(chunk, enc, next) {
+  options.objectMode = true;
 
-    //console.log(chunk);
-    //next();
+  Transform.call(this, options);
 
-  //};
-  socket.emit('tiles', num);
+}
 
-});
+util.inherits(Texter, Transform);
+
+Texter.prototype._transform = function(obj, enc, cb) {
+  console.log(obj[1].text);
+  this.push(obj[1].text);
+  cb();
+};
+
+var textr = new Texter();
+
+module.exports = function(server) {
 
 
-// How I would like this:
-// - store connects to apis
-// - streaaaam items
-// - ioServer stream items to ioClient
-// - react updates client awesomely
+  // https://github.com/jdub/node-twitter
+  var twit = new twitter(twitterConfig);
+
+
+  var sock = shoe(function(stream) {
+
+    twit.stream('filter', { track: 'kitten' }, function(tweetStream) {
+
+      es(tweetStream).pipe(textr).pipe(stream);
+
+    });
+
+    stream.write('Hello from server');
+
+  });
+
+  sock.install(server, '/link');
+
+}
+
