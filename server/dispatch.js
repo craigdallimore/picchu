@@ -3,8 +3,8 @@
 //
 // ----------------------------------------------------------------------------
 
-var tiles       = require('./store').tiles;
-var shoe          = require('shoe');
+var tiles = require('./store').tiles;
+var shoe  = require('shoe');
 
 module.exports = function(server) {
 
