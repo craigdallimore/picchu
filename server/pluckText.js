@@ -1,5 +1,5 @@
 //
-// Pluck Text transform
+// Twitter transform
 //
 // Returns just the text of a tweet
 // ----------------------------------------------------------------------------
@@ -24,7 +24,7 @@ function Plucker(options) {
 util.inherits(Plucker, Transform);
 
 Plucker.prototype._transform = function(obj, enc, cb) {
-  this.push(obj[1].text);
+  this.push(obj[1].text); // get the text or whatever
   cb();
 };
 
