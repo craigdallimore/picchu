@@ -19,9 +19,7 @@
   },
   "dependencies": {
     "compression": "^1.0.8",
-    "emit-stream": "^0.1.2",
     "errorhandler": "~1.x",
-    "event-stream": "^3.1.5",
     "express": "~4.x",
     "instagram-node": "^0.4.1",
     "jade": "*",
