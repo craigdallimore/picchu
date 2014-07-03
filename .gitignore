@@ -1,5 +1,5 @@
 server/config/*.js
-static/image/sample
+static/img/sample/
 node_modules/
 bower_components/
 static/.sass-cache/
