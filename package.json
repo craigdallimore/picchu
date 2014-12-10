@@ -1,0 +1,31 @@
+{
+  "name": "Picchu",
+  "description": "Photo wall app",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "browserify": "~7.0.x",
+    "es6ify": "^1.5.1",
+    "coffee-script": "~1.8.x",
+    "gulp": "~3.8.x",
+    "reactify": "^0.17.1",
+    "gulp-rename": "~1.2.x",
+    "gulp-util": "^3.0.1",
+    "gulp-ruby-sass": "^0.7.1"
+  },
+  "dependencies": {
+    "compression": "^1.2.1",
+    "delorean": "^0.8.7",
+    "errorhandler": "~1.x",
+    "express": "~4.x",
+    "instagram-node": "^0.5.2",
+    "jade": "*",
+    "morgan": "~1.x",
+    "react": "^0.12.1",
+    "react-router": "^0.11.4",
+    "shoe": "0.0.15",
+    "through": "^2.3.6",
+    "twitter": "^0.2.13",
+    "vinyl-source-stream": "^1.0.0"
+  }
+}
