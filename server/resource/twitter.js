@@ -54,8 +54,6 @@ twit.stream('filter', { track: 'pug' }, function(tweetStream) {
         'imgPath' : url
       };
 
-      console.log(twitterData);
-
       stream.write(twitterData);
 
     }

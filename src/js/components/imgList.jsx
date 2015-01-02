@@ -6,10 +6,10 @@
 
 //// IMPORTS //////////////////////////////////////////////////////////////////
 
-const { Flux }    = require('delorean');
-const React       = require('react/addons');
+const { Flux }     = require('delorean');
+const React        = require('react/addons');
 const MasonryMixin = require('react-masonry-mixin');
-let clientActions = require('../actions/client');
+let clientActions  = require('../actions/client');
 
 //// CONSTANTS ////////////////////////////////////////////////////////////////
 
@@ -44,14 +44,10 @@ let ImgList = React.createClass({
 
       return (
 
-        /* jshint ignore:start */
-
         <li className="item" key={item.key}>
           <img src={ item.imgPath } width="300" alt="pic"/>
           <span className="source">{item.source}</span>
         </li>
-
-        /* jshint ignore:end */
 
       );
 
@@ -59,13 +55,9 @@ let ImgList = React.createClass({
 
     return (
 
-        /* jshint ignore:start */
-
         <ul ref={ MASONRYREF } className={'img-list'}>
           {lis}
         </ul>
-
-        /* jshint ignore:end */
 
     );
 

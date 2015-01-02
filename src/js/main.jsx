@@ -6,7 +6,6 @@
 
 // - gulp 4.0 (not releaaed yet)
 // - fluxify the image adding
-// - implement masonry
 
 // - get instagram working
 /*
@@ -20,8 +19,6 @@
 
   - create an instagram stream
   - expose it to the client!
-  - distinguish between twitter and instagram photos on the client
-  - clean up code
   - set up a new app on gandi
   - deploy to gandi
   - look at the app, confirm it works!
@@ -36,7 +33,6 @@
 // -- approve / prevent images from being shown
 // -- see 'new' images
 // - make image upload url (expose via qr code?)
-
 
 //// IMPORTS //////////////////////////////////////////////////////////////////
 
