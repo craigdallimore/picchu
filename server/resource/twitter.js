@@ -1,12 +1,17 @@
+///////////////////////////////////////////////////////////////////////////////
 //
 // Twitter resource
 //
-// ----------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////////////////
 
-var twitter       = require('twitter'); // https://github.com/jdub/node-twitter
+//// IMPORTS //////////////////////////////////////////////////////////////////
+
+var Twitter       = require('twitter'); // https://github.com/jdub/node-twitter
 var twitterConfig = require('../config/twitter');
 var Transform     = require('stream').Transform;
 var util          = require('util');
+
+//// Twitter Stream constructor ///////////////////////////////////////////////
 
 function TwitStream(options) {
 
@@ -30,22 +35,30 @@ TwitStream.prototype._transform = function(obj, enc, next) {
 };
 
 
-var twit   = new twitter(twitterConfig);
+var twit   = new Twitter(twitterConfig);
 var stream = TwitStream();
 
-stream.on('error', function(err) {
-  console.warn('Error with tweet stream');
-  console.warn(err);
-});
-
 //This makes an oAuth connection and returns a stream in the callback.
-twit.stream('filter', { track: 'kitten' }, function(tweetStream) {
+twit.stream('filter', { track: 'pug' }, function(tweetStream) {
 
   tweetStream.on('data', function(data) {
-    stream.write({ 'tweet': data.text });
+    var hasMedia = data.entities && data.entities.media && data.entities.media[0].media_url;
+
+    if (hasMedia) {
+
+      var url = data.entities.media[0].media_url;
+      console.log('Twitter: ' +url);
+      stream.write({ 'tweet': data.text, 'imgPath': url });
+
+    }
   });
 
+  tweetStream.on('error', console.error);
+
 });
+
+//// EXPORTS //////////////////////////////////////////////////////////////////
 
 module.exports = stream;
 
+///////////////////////////////////////////////////////////////////////////////

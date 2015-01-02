@@ -74,7 +74,6 @@ Warn admin if space is low.
 
 ## Requires
 
-
 - [http://sass-lang.com/](SASS 3.3+) CSS preprocessor
 - [http://gulpjs.com/](Gulp taskrunner) for managing SCSS and JS build tasks
 - [http://nodejs.org/download/](NodeJS and NPM) to install node modules and to run Grunt

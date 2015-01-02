@@ -24,6 +24,7 @@ reactify   = require 'reactify'             # Transform for .jsx
 es6ify     = require 'es6ify'               # Transform for es6 -> es5
 source     = require 'vinyl-source-stream'  # Bridge text stream -> gulp stream
 rename     = require 'gulp-rename'
+livereload = require 'gulp-livereload'
 
 #--- HELPERS ------------------------------------------------------------------
 
@@ -42,9 +43,9 @@ scssEntryFile = './static/scss/main.scss'
 scssPath      = './static/scss/'
 cssBundle     = 'app.css'
 
-destFolder    = './static/dist/'
+serverPath    = './server'
 
-#--- JS TASKS -----------------------------------------------------------------
+destFolder    = './static/dist/'
 
 #--- JS TASKS -----------------------------------------------------------------
 
@@ -60,6 +61,7 @@ gulp.task 'js', ->
     .on 'error', handleError
     .pipe source jsBundle
     .pipe gulp.dest destFolder
+    .pipe livereload()
 
 #--- CSS TASKS ----------------------------------------------------------------
 
@@ -83,10 +85,20 @@ gulp.task 'css', ->
 
   .pipe rename cssBundle
   .pipe gulp.dest destFolder
+  .pipe livereload()
+
+#-- SERVERSIDE TASKS ----------------------------------------------------------
+
+gulp.task 'server', ->
+
+  console.log 'Reloading client'
+  livereload()
 
 #--- WATCH TASK ---------------------------------------------------------------
 
 gulp.task 'watch', ->
+
+  livereload.listen()
 
   gulp.watch [
     scssPath + '**/*.scss'
@@ -96,6 +108,12 @@ gulp.task 'watch', ->
     jsPath + '**/*.js'
     jsPath + '**/*.jsx'
   ], [ 'js' ]
+
+  gulp.watch [
+    './server.js',
+    serverPath + '**/*.js',
+    serverPath + '**/*.jade'
+  ], [ 'server' ]
 
 #--- DEFAULT TASK -------------------------------------------------------------
 

@@ -49,7 +49,7 @@ stream
   .pipe(through(extractImage))
   .pipe(through(Actions.onNewImage));
 
-stream.write('Hello from client');
+stream.write('Hello from client\n');
 
 //// EXPORTS //////////////////////////////////////////////////////////////////
 

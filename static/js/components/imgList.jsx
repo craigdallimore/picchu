@@ -29,7 +29,7 @@ let ImgList = React.createClass({
         /* jshint ignore:start */
 
         <li key={item.key}>
-          <img src={ item.imgPath } width="100" alt="pic"/>
+          <img src={ item.imgPath } width="300" alt="pic"/>
         </li>
 
         /* jshint ignore:end */

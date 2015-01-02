@@ -1,3 +1,5 @@
+// Recover them here: https://apps.twitter.com/app/6360552/keys
+
 module.exports = {
   'consumer_key'        : 'EXAMPLE',
   'consumer_secret'     : 'EXAMPLE',

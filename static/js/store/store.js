@@ -4,9 +4,16 @@
 //
 ///////////////////////////////////////////////////////////////////////////////
 
+// TODO
+
+// Remove dupes
+// Inject new images at the top
+// Prune images from the bottom
+
 //// LIBS /////////////////////////////////////////////////////////////////////
 
-const { Flux } = require('delorean');
+const { Flux }               = require('delorean');
+let   { eqProps, containsWith } = require('ramda');
 
 //// HELPER ///////////////////////////////////////////////////////////////////
 
@@ -30,9 +37,22 @@ let Store = Flux.createStore({
 
   onNewImage(payload) {
 
-    payload.key = ++key;
-    state.images.push(payload);
-    this.emit(CHANGE);
+    console.log('payload', payload.imgPath);
+
+    if (!containsWith(eqProps('imgPath'), payload, state.images)) {
+
+      console.log('unique image');
+
+      payload.key = ++key;
+      state.images.unshift(payload);
+
+      // Truncate to only 10 items.
+      if (state.images.length > 10) {
+        state.images.length = 10;
+      }
+
+      this.emit(CHANGE);
+    }
 
   },
 
