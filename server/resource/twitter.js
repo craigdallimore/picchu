@@ -47,8 +47,16 @@ twit.stream('filter', { track: 'pug' }, function(tweetStream) {
     if (hasMedia) {
 
       var url = data.entities.media[0].media_url;
-      console.log('Twitter: ' +url);
-      stream.write({ 'tweet': data.text, 'imgPath': url });
+
+      var twitterData = {
+        'source'  : 'twitter',
+        'tweet'   : data.text,
+        'imgPath' : url
+      };
+
+      console.log(twitterData);
+
+      stream.write(twitterData);
 
     }
   });

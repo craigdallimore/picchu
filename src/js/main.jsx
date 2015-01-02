@@ -6,6 +6,7 @@
 
 // - gulp 4.0 (not releaaed yet)
 // - fluxify the image adding
+// - implement masonry
 
 // - get instagram working
 /*
@@ -27,6 +28,8 @@
 
 */
 
+// - clean up the extraction of twitter images
+// - dynamic subscription topics
 // - get image upload working
 // - make an admin section:
 // -- see all the images in the queue

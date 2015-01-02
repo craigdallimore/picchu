@@ -24,6 +24,7 @@
     "morgan": "~1.x",
     "ramda": "^0.8.0",
     "react": "^0.12.2",
+    "react-masonry-mixin": "^0.5.3",
     "react-router": "^0.11.6",
     "shoe": "0.0.15",
     "through": "^2.3.6",

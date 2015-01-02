@@ -1,13 +1,16 @@
+///////////////////////////////////////////////////////////////////////////////
 //
 // Image stream
 //
-// ----------------------------------------------------------------------------
+///////////////////////////////////////////////////////////////////////////////
+
+//// IMPORTS //////////////////////////////////////////////////////////////////
 
 var Transform = require('stream').Transform;
 var util      = require('util');
 
-// Stream constructor
-// ------------------
+//// Stream constructor ///////////////////////////////////////////////////////
+
 function ImgStream(options) {
 
   if(!(this instanceof ImgStream)) {
@@ -29,8 +32,8 @@ ImgStream.prototype._transform = function(obj, enc, next) {
   next();
 };
 
-// Stream Instance
-// ---------------
+//// Stream Instance //////////////////////////////////////////////////////////
+
 var stream = ImgStream();
 
 stream.on('error', function(err) {
@@ -38,7 +41,9 @@ stream.on('error', function(err) {
   console.warn(err);
 });
 
-setInterval(function() {
+var count = 5;
+
+var interval = setInterval(function() {
 
   var random = Math.ceil(Math.random() * 15);
 
@@ -47,8 +52,14 @@ setInterval(function() {
 
   stream.write({ 'imgPath': path });
 
+  if (count-- === 0) {
+    clearInterval(interval);
+  }
+
 }, 1800);
 
+//// EXPORTS //////////////////////////////////////////////////////////////////
 
 module.exports = stream;
 
+///////////////////////////////////////////////////////////////////////////////

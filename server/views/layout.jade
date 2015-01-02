@@ -19,16 +19,16 @@ html.no-js(lang='en')
     meta(name='description', content= '')
     meta(name='author', content='Craig Dallimore')
 
-    link(rel='shortcut icon', type='image/png', href='/static/img/favicon.png')
+    link(rel='shortcut icon', type='image/png', href='/src/img/favicon.png')
 
     //- CSS output from SASS / Grunt
-    link(rel='stylesheet', href='/static/dist/app.css')
+    link(rel='stylesheet', href='/src/dist/app.css')
 
     //- Provides some CSS3 selectors for IE 6,7,8
     //if (gte IE 6)&(lte IE 8)
-      script(src='static/bower_components/selectivizr/selectivizr.js')
+      script(src='src/bower_components/selectivizr/selectivizr.js')
 
-    script(src='static/bower_components/modernizr/modernizr.js')
+    script(src='src/bower_components/modernizr/modernizr.js')
 
   body
     noscript
@@ -36,6 +36,6 @@ html.no-js(lang='en')
 
     block content
 
-    script(src='static/dist/app.min.js')
+    script(src='src/dist/app.min.js')
 
 //- KAIZEN

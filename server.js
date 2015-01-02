@@ -35,8 +35,8 @@ app.disable('x-powered-by');
 // Cache the things
 var oneYear = 31557600000;
 
-app.use(express.static(__dirname + '/',    { maxAge: oneYear }));
 app.use(express.static(__dirname + '/src', { maxAge: oneYear }));
+app.use(express.static(__dirname + '/',    { maxAge: oneYear }));
 
 if (env === 'development') {
 

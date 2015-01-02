@@ -5,9 +5,28 @@
 
 .img-list {
 
-  li {
+  .item {
 
-    float: left;
+    width : 300px;
+    margin-bottom : 10px;
+
+  }
+
+  img {
+
+    display : block;
+
+  }
+
+  .source {
+
+    padding    : 10px;
+    background : rgba(0,0,0,0.3);
+    color      : white;
+    position   : absolute;
+    bottom     : 0;
+    left       : 0;
+    right      : 0;
 
   }
 
