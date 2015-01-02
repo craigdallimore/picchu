@@ -1,11 +1,11 @@
 server/config/*.js
-static/img/sample/
+src/img/sample/
 node_modules/
 bower_components/
-static/.sass-cache/
+src/.sass-cache/
 /.sass-cache/
-static/css/
-static/dist/
+src/css/
+src/dist/
 *.swp
 .DS_Store
 .map

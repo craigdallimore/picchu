@@ -35,17 +35,17 @@ handleError = (err) ->
 
 #--- FILES - FOLDERS  ---------------------------------------------------------
 
-jsEntryFile   = './static/js/main.jsx'
-jsPath        = './static/js/'
+jsEntryFile   = './src/js/main.jsx'
+jsPath        = './src/js/'
 jsBundle      = 'app.min.js'
 
-scssEntryFile = './static/scss/main.scss'
-scssPath      = './static/scss/'
+scssEntryFile = './src/scss/main.scss'
+scssPath      = './src/scss/'
 cssBundle     = 'app.css'
 
 serverPath    = './server'
 
-destFolder    = './static/dist/'
+destFolder    = './src/dist/'
 
 #--- JS TASKS -----------------------------------------------------------------
 
